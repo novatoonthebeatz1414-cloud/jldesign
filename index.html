@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#F4F6FB">
+    <meta name="description" content="JL Design crea logos, identidades visuales y piezas gráficas para marcas que quieren destacar.">
+    <meta property="og:title" content="JL Design | Diseño que impulsa tu marca">
+    <meta property="og:description" content="Logos, identidad visual, flyers, posters, tarjetas y stickers profesionales.">
+    <meta property="og:image" content="DESIGN1.webp">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/webp" href="DESIGN1.webp">
+    <title>JL Design | Agencia de Diseño y Desarrollo Profesional</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        refBg: '#F4F6FB',
+                        refCard: '#FFFFFF',
+                        refBluePrimary: '#0052FF',
+                        refBlueDark: '#0052FF',
+                        refTextMain: '#1D2D44',
+                        refTextMuted: '#6C7A9C',
+                        refBorder: '#E2E8F0'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Manrope + Sora -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --premium-ink: #0052ff;
+            --premium-blue: #0052ff;
+            --premium-line: rgba(226, 232, 240, 0.8);
+        }
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-text-size-adjust: 100%;
+            background-image:
+                radial-gradient(circle at 12% 8%, rgba(0, 82, 255, 0.08), transparent 28rem),
+                radial-gradient(circle at 88% 42%, rgba(46, 196, 182, 0.06), transparent 24rem);
+            background-attachment: fixed;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+            min-width: 0;
+        }
+        img, video {
+            max-width: 100%;
+        }
+        section, header, footer, main {
+            width: 100%;
+            max-width: 100%;
+        }
+        header.safe-header {
+            width: auto;
+        }
+        h1, h2, h3, h4, p, a, button, label {
+            overflow-wrap: anywhere;
+        }
+        h2, h3, h4, nav, header span, a, button {
+            font-family: 'Sora', sans-serif;
+        }
+        h2, h3, h4 {
+            letter-spacing: -0.02em;
+        }
+        section {
+            scroll-margin-top: 6rem;
+        }
+        .shadow-custom {
+            box-shadow: 0 20px 50px -18px rgba(10, 25, 49, 0.22), 0 8px 24px -12px rgba(0, 82, 255, 0.16);
+            border-radius: 2.25rem;
+            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+        }
+        .shadow-custom:hover {
+            transform: translateY(-7px) scale(1.01);
+            box-shadow: 0 26px 58px -20px rgba(10, 25, 49, 0.28), 0 12px 28px -12px rgba(0, 82, 255, 0.22);
+        }
+        .hero-grid {
+            background-image: linear-gradient(rgba(0, 82, 255, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 82, 255, 0.08) 1px, transparent 1px);
+            background-size: 42px 42px;
+            -webkit-mask-image: linear-gradient(to bottom, black, transparent 72%);
+            mask-image: linear-gradient(to bottom, black, transparent 72%);
+            opacity: 0.55;
+        }
+        .hero-line {
+            width: 4rem;
+            height: 0.25rem;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--premium-blue), #2ec4b6);
+            animation: line-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        .bg-refBluePrimary,
+        .bg-refBlueDark,
+        .bg-gradient-to-br {
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.24);
+        }
+        .btn-glow {
+            border-radius: 999px;
+            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, filter 0.3s ease;
+        }
+        .btn-glow:hover {
+            filter: brightness(1.06);
+        }
+        .btn-glow:active {
+            transform: translateY(0) scale(0.97);
+        }
+        a, button, summary {
+            -webkit-tap-highlight-color: transparent;
+        }
+        a:focus-visible, button:focus-visible, summary:focus-visible, [role="button"]:focus-visible {
+            outline: 3px solid rgba(0, 82, 255, 0.35);
+            outline-offset: 4px;
+        }
+        @keyframes line-reveal {
+            from { opacity: 0; transform: scaleX(0); transform-origin: left; }
+            to { opacity: 1; transform: scaleX(1); transform-origin: left; }
+        }
+        .work-modal[hidden] {
+            display: none;
+        }
+        .btn-glow {
+            box-shadow: 0 10px 24px -8px rgba(0, 82, 255, 0.55);
+            transition: all 0.3s ease;
+        }
+        .btn-glow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -8px rgba(0, 82, 255, 0.65);
+        }
+        .js .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            filter: blur(6px);
+            will-change: opacity, transform, filter;
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), filter 0.8s ease;
+        }
+        .js .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+        .work-visual {
+            min-height: 230px;
+            transition: transform 0.5s ease;
+        }
+        .group:hover .work-visual {
+            transform: scale(1.03);
+        }
+        .mobile-menu summary {
+            list-style: none;
+        }
+        .mobile-menu summary::-webkit-details-marker {
+            display: none;
+        }
+        .mobile-menu-panel {
+            left: 50%;
+            right: auto;
+            transform: translateX(-50%);
+            width: min(12rem, calc(100vw - 2rem));
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.25s ease;
+        }
+        .mobile-menu[open] .mobile-menu-panel {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateX(-50%) translateY(0);
+        }
+        .mobile-menu summary i {
+            transition: transform 0.3s ease;
+        }
+        .mobile-menu[open] summary i {
+            transform: rotate(90deg);
+        }
+        .desktop-nav-link {
+            position: relative;
+            transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+        }
+        .desktop-nav-link::after {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            right: 1rem;
+            bottom: 0.3rem;
+            height: 2px;
+            border-radius: 999px;
+            background: currentColor;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.25s ease;
+        }
+        .desktop-nav-link:hover::after,
+        .desktop-nav-link.active::after {
+            transform: scaleX(1);
+        }
+        .desktop-nav-link.active {
+            background: var(--premium-blue);
+            color: white;
+            box-shadow: 0 6px 16px -8px rgba(0, 82, 255, 0.7);
+        }
+        .mobile-nav-link {
+            transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+        }
+        .mobile-nav-link:hover,
+        .mobile-nav-link.active {
+            transform: translateX(4px);
+            background-color: #eff6ff;
+            color: var(--premium-blue);
+        }
+        .safe-header {
+            top: max(0.75rem, env(safe-area-inset-top));
+            left: max(0.75rem, env(safe-area-inset-left));
+            right: max(0.75rem, env(safe-area-inset-right));
+        }
+        .safe-footer {
+            padding-bottom: max(3.5rem, env(safe-area-inset-bottom));
+        }
+        html {
+            scroll-padding-top: 7rem;
+        }
+        @media (max-width: 340px) {
+            .header-phone {
+                display: none;
+            }
+        }
+        @media (max-width: 640px) {
+            body {
+                background-attachment: scroll;
+            }
+            section {
+                overflow-x: hidden;
+            }
+            .header-phone {
+                display: none;
+            }
+            .safe-header > div {
+                min-width: 0;
+            }
+            .safe-header img {
+                width: 3.5rem;
+                height: 3.5rem;
+            }
+            .safe-header {
+                left: max(0.5rem, env(safe-area-inset-left));
+                right: max(0.5rem, env(safe-area-inset-right));
+                border-radius: 1.5rem;
+            }
+            #inicio {
+                padding-top: 7rem;
+                padding-bottom: 3rem;
+            }
+            #inicio .grid {
+                gap: 2rem;
+            }
+            #inicio .shadow-custom {
+                padding: 1rem;
+            }
+            #inicio .shadow-custom > div:first-child {
+                height: 13rem;
+            }
+            html {
+                scroll-padding-top: 6rem;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .js .reveal {
+                opacity: 1;
+                transform: none;
+                filter: none;
+                transition: none;
+            }
+            .work-visual {
+                transition: none;
+            }
+            .hero-line {
+                animation: none;
+            }
+        }
+    </style>
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-refBg text-refTextMain antialiased">
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header class="safe-header fixed top-3 left-3 right-3 z-50 rounded-[2rem] bg-white/70 backdrop-blur-xl border border-white/80 shadow-lg">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-20 md:h-24 flex items-center justify-between gap-2">
+            <div class="flex items-center space-x-3">
+            <img src="DESIGN1.webp" alt="JL Design" class="w-16 h-16 md:w-20 md:h-20 object-contain">
+            </div>
+
+            <nav class="hidden md:flex items-center gap-1 rounded-full border border-refBorder/70 bg-white/60 p-1 text-sm font-medium text-refTextMuted shadow-sm">
+                <a href="#inicio" class="desktop-nav-link rounded-full px-4 py-2 hover:bg-refBluePrimary hover:text-white transition">Inicio</a>
+                <a href="#servicios" class="desktop-nav-link rounded-full px-4 py-2 hover:bg-refBluePrimary hover:text-white transition">Servicios</a>
+                <a href="#trabajos" class="desktop-nav-link rounded-full px-4 py-2 hover:bg-refBluePrimary hover:text-white transition">Trabajos</a>
+                <a href="#proceso" class="desktop-nav-link rounded-full px-4 py-2 hover:bg-refBluePrimary hover:text-white transition">Proceso</a>
+                <a href="#por-que-elegirnos" class="desktop-nav-link rounded-full px-4 py-2 hover:bg-refBluePrimary hover:text-white transition">Nosotros</a>
+            </nav>
+
+            <details class="mobile-menu relative md:hidden">
+                <summary class="w-10 h-10 rounded-full border border-refBorder/70 bg-white/70 text-refBlueDark flex items-center justify-center cursor-pointer" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </summary>
+                <nav class="mobile-menu-panel absolute top-12 rounded-2xl border border-refBorder bg-white p-2 shadow-xl text-sm font-medium text-refTextMuted">
+                    <a href="#inicio" class="mobile-nav-link block rounded-xl px-4 py-3">Inicio</a>
+                    <a href="#servicios" class="mobile-nav-link block rounded-xl px-4 py-3">Servicios</a>
+                    <a href="#trabajos" class="mobile-nav-link block rounded-xl px-4 py-3">Trabajos</a>
+                    <a href="#proceso" class="mobile-nav-link block rounded-xl px-4 py-3">Proceso</a>
+                    <a href="#por-que-elegirnos" class="mobile-nav-link block rounded-xl px-4 py-3">Nosotros</a>
+                    <a href="#contacto" class="mobile-nav-link block rounded-xl px-4 py-3">Contacto</a>
+                </nav>
+            </details>
+
+            <div>
+                <a href="https://wa.me/18299777873?text=Hola%20JL%20Design,%20quiero%20cotizar%20un%20proyecto" target="_blank" class="bg-refBluePrimary hover:bg-blue-700 text-white px-3 py-2 sm:px-5 sm:py-3 rounded-full font-semibold text-xs sm:text-sm btn-glow flex items-center space-x-2">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                    <span class="header-phone">829-977-7873</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN HERO (PRINCIPAL) -->
+    <section id="inicio" class="relative overflow-hidden pt-28 sm:pt-32 pb-20 md:pt-44 md:pb-28">
+        <div class="hero-grid absolute inset-0 pointer-events-none"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-w-0">
+                
+                <div class="min-w-0 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-refBluePrimary text-xs font-bold uppercase tracking-wider text-center">
+                        <span class="w-2 h-2 rounded-full bg-refBluePrimary animate-pulse"></span>
+                        <span>Diseño Gráfico & Desarrollo Profesional</span>
+                    </div>
+                    <div class="hero-line mx-auto lg:mx-0"></div>
+                    <p class="w-full max-w-xl mx-auto lg:mx-0 text-refTextMuted text-lg font-normal break-words">
+                        Elevamos tu negocio con logos, branding estratégico y piezas gráficas listas para imprimir, publicar y compartir.
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://wa.me/18299777873?text=Hola,%20quiero%20un%20presupuesto%20para%20mi%20marca" target="_blank" class="inline-flex items-center justify-center space-x-3 bg-refBluePrimary hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-xl btn-glow text-base w-full sm:w-auto">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            <span>Quiero un presupuesto ahora</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta / Mockup Visual limpio -->
+                <div class="relative flex min-w-0 justify-center">
+                    <div class="w-full max-w-md bg-refCard p-6 rounded-3xl border border-refBorder shadow-custom">
+                        <div class="h-56 rounded-2xl bg-gradient-to-br from-refBluePrimary to-blue-700 flex items-center justify-center p-6 text-center shadow-lg">
+                            <div class="text-white">
+                                <i class="fas fa-sparkles text-5xl mb-4"></i>
+                                <h3 class="font-bold text-2xl tracking-wide">Diseño que impulsa tu marca</h3>
+                                <p class="text-sm text-blue-100 mt-2">Creatividad, estrategia y precisión técnica</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 space-y-3">
+                            <div class="flex items-center justify-between text-sm py-2 border-b border-refBorder">
+                                <span class="text-refTextMuted">Contacto Directo:</span>
+                                <span class="font-bold text-refBlueDark">829-977-7873</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm py-2">
+                                <span class="text-refTextMuted">Disponibilidad:</span>
+                                <span class="font-semibold text-emerald-600 flex items-center space-x-1">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse inline-block mr-1"></span>
+                                    <span>Activo para proyectos</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNER DE CONTACTO RÁPIDO -->
+    <section class="py-12 bg-refBluePrimary text-white relative">
+        <div class="reveal max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">TU SOCIO DE DISEÑO - CONTACTO RÁPIDO</h2>
+            <p class="text-blue-100 max-w-xl mx-auto text-sm sm:text-base">
+                Comunícate de manera inmediata por vía telefónica o WhatsApp para agilizar tus piezas gráficas.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE SERVICIOS -->
+    <section id="servicios" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal text-center max-w-2xl mx-auto space-y-3 mb-16">
+                <h2 class="text-3xl font-extrabold text-refBlueDark">Diseño para cada punto de contacto</h2>
+                <p class="text-refTextMuted">Desde tu logo hasta tus piezas impresas y digitales, creamos una presencia visual consistente.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="reveal bg-refCard p-8 rounded-3xl border border-refBorder shadow-custom hover:border-refBluePrimary transition group" style="transition-delay: 100ms">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 text-refBluePrimary flex items-center justify-center text-2xl mb-6 group-hover:bg-refBluePrimary group-hover:text-white transition">
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-refBlueDark mb-3">Identidad Visual</h3>
+                    <p class="text-refTextMuted text-sm leading-relaxed mb-6">
+                        Creación de logotipos profesionales, paletas de colores corporativas y manuales de marca completos.
+                    </p>
+                    <span class="text-refBluePrimary text-sm font-semibold">Servicio disponible</span>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="reveal bg-refCard p-8 rounded-3xl border border-refBorder shadow-custom hover:border-refBluePrimary transition group" style="transition-delay: 200ms">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 text-refBluePrimary flex items-center justify-center text-2xl mb-6 group-hover:bg-refBluePrimary group-hover:text-white transition">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-refBlueDark mb-3">Diseño Gráfico</h3>
+                    <p class="text-refTextMuted text-sm leading-relaxed mb-6">
+                        Banners, flyers, tarjetas de presentación y material publicitario impreso o digital de alto impacto.
+                    </p>
+                    <span class="text-refBluePrimary text-sm font-semibold">Servicio disponible</span>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="reveal bg-refCard p-8 rounded-3xl border border-refBorder shadow-custom hover:border-refBluePrimary transition group" style="transition-delay: 400ms">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 text-refBluePrimary flex items-center justify-center text-2xl mb-6 group-hover:bg-refBluePrimary group-hover:text-white transition">
+                        <i class="fas fa-shapes"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-refBlueDark mb-3">Diseño de Logos</h3>
+                    <p class="text-refTextMuted text-sm leading-relaxed mb-6">Logotipos memorables, versátiles y listos para usar en redes, impresión y productos.</p>
+                    <span class="text-refBluePrimary text-sm font-semibold">Servicio disponible</span>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="reveal bg-refCard p-8 rounded-3xl border border-refBorder shadow-custom hover:border-refBluePrimary transition group" style="transition-delay: 500ms">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 text-refBluePrimary flex items-center justify-center text-2xl mb-6 group-hover:bg-refBluePrimary group-hover:text-white transition">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-refBlueDark mb-3">Tarjetas y Flyers</h3>
+                    <p class="text-refTextMuted text-sm leading-relaxed mb-6">Tarjetas de presentación, flyers y posters preparados para imprimir o publicar.</p>
+                    <span class="text-refBluePrimary text-sm font-semibold">Servicio disponible</span>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="reveal bg-refCard p-8 rounded-3xl border border-refBorder shadow-custom hover:border-refBluePrimary transition group" style="transition-delay: 600ms">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 text-refBluePrimary flex items-center justify-center text-2xl mb-6 group-hover:bg-refBluePrimary group-hover:text-white transition">
+                        <i class="fas fa-stamp"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-refBlueDark mb-3">Stickers y Etiquetas</h3>
+                    <p class="text-refTextMuted text-sm leading-relaxed mb-6">Stickers personalizados y etiquetas con diseños que hacen reconocible tu producto.</p>
+                    <span class="text-refBluePrimary text-sm font-semibold">Servicio disponible</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATÁLOGO DE TRABAJOS -->
+    <section id="trabajos" class="py-20 bg-white border-y border-refBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+                <div class="max-w-2xl space-y-3">
+                    <p class="text-refBluePrimary text-xs font-bold uppercase tracking-[0.2em]">Portafolio seleccionado</p>
+                    <h2 class="text-3xl font-extrabold text-refBlueDark">Trabajos que hacen visible tu marca</h2>
+                    <p class="text-refTextMuted">Una muestra del tipo de identidad, contenido y experiencias digitales que podemos construir para tu negocio.</p>
+                </div>
+                <a href="#contacto" class="inline-flex items-center gap-2 text-refBluePrimary font-semibold text-sm hover:gap-3 transition-all">
+                    Ver opciones <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <div class="reveal mb-10 h-56 sm:h-72 md:h-[32rem] overflow-hidden rounded-3xl border border-refBorder bg-black shadow-custom">
+                <video class="block w-full h-full object-contain" autoplay muted loop playsinline preload="metadata" aria-label="Video mostrando trabajos de JL Design">
+                    <source src="Copia de Pagina BioLink.mp4" type="video/mp4">
+                    Tu navegador no puede reproducir este video.
+                </video>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="work-card reveal group overflow-hidden rounded-3xl border border-refBorder bg-refCard shadow-custom" data-work-title="Identidad visual para Apex Technologies" data-work-description="Diseño de identidad visual para una empresa de tecnología." tabindex="0" role="button" style="transition-delay: 100ms">
+                    <img src="apex.webp" alt="Identidad visual para Apex Technologies" class="work-visual w-full object-cover">
+                    <div class="p-6"><h3 class="text-lg font-bold text-refBlueDark">Identidad visual</h3><p class="mt-2 text-sm leading-relaxed text-refTextMuted">Logo y comunicación visual para Apex Technologies.</p></div>
+                </article>
+                <article class="work-card reveal group overflow-hidden rounded-3xl border border-refBorder bg-refCard shadow-custom" data-work-title="Identidad visual para LD Parfums" data-work-description="Diseño de logo y piezas gráficas para una marca de perfumes." tabindex="0" role="button" style="transition-delay: 200ms">
+                    <img src="perfume.webp" alt="Identidad visual para LD Parfums" class="work-visual w-full object-cover">
+                    <div class="p-6"><h3 class="text-lg font-bold text-refBlueDark">Marca para LD Parfums</h3><p class="mt-2 text-sm leading-relaxed text-refTextMuted">Logo y piezas promocionales para perfumería.</p></div>
+                </article>
+                <article class="work-card reveal group overflow-hidden rounded-3xl border border-refBorder bg-refCard shadow-custom" data-work-title="Diseño de logo" data-work-description="Diseño de logo personalizado para una marca." tabindex="0" role="button" style="transition-delay: 300ms">
+                    <img src="DESI.WEBP" alt="Diseño de logo personalizado" class="work-visual w-full object-cover">
+                    <div class="p-6"><h3 class="text-lg font-bold text-refBlueDark">Diseño de logo</h3><p class="mt-2 text-sm leading-relaxed text-refTextMuted">Una identidad visual creada para destacar.</p></div>
+                </article>
+                <article class="work-card reveal group overflow-hidden rounded-3xl border border-refBorder bg-refCard shadow-custom" data-work-title="Letrero para Taller MOM" data-work-description="Diseño de letrero publicitario para un taller automotriz." tabindex="0" role="button" style="transition-delay: 400ms">
+                    <img src="taller.webp" alt="Letrero para Taller MOM" class="work-visual w-full object-cover">
+                    <div class="p-6"><h3 class="text-lg font-bold text-refBlueDark">Letrero publicitario</h3><p class="mt-2 text-sm leading-relaxed text-refTextMuted">Diseño para comunicar la ubicación y servicios del negocio.</p></div>
+                </article>
+                <article class="work-card reveal group overflow-hidden rounded-3xl border border-refBorder bg-refCard shadow-custom" data-work-title="Talonario para Taller MOM" data-work-description="Diseño de talonario personalizado para un negocio local." tabindex="0" role="button" style="transition-delay: 500ms">
+                    <img src="talonario.webp" alt="Talonario personalizado para Taller MOM" class="work-visual w-full object-cover">
+                    <div class="p-6"><h3 class="text-lg font-bold text-refBlueDark">Talonario personalizado</h3><p class="mt-2 text-sm leading-relaxed text-refTextMuted">Piezas impresas diseñadas para el uso diario del negocio.</p></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESO DE TRABAJO -->
+    <section id="proceso" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal max-w-2xl space-y-3 mb-12">
+                <p class="text-refBluePrimary text-xs font-bold uppercase tracking-[0.2em]">Así trabajamos</p>
+                <h2 class="text-3xl font-extrabold text-refBlueDark">Un proceso claro, de principio a fin</h2>
+                <p class="text-refTextMuted">Cada etapa tiene un objetivo concreto para que avances con claridad y recibas un resultado que puedas usar.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="reveal rounded-3xl border border-refBorder bg-refCard p-6 shadow-custom" style="transition-delay: 100ms">
+                    <span class="text-refBluePrimary text-sm font-bold">01</span>
+                    <h3 class="mt-8 text-lg font-bold text-refBlueDark">Conversamos</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-refTextMuted">Entendemos tu idea, objetivos y el tipo de cliente que quieres atraer.</p>
+                </div>
+                <div class="reveal rounded-3xl border border-refBorder bg-refCard p-6 shadow-custom" style="transition-delay: 200ms">
+                    <span class="text-refBluePrimary text-sm font-bold">02</span>
+                    <h3 class="mt-8 text-lg font-bold text-refBlueDark">Proponemos</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-refTextMuted">Definimos una dirección visual, alcance y propuesta ajustada a tu proyecto.</p>
+                </div>
+                <div class="reveal rounded-3xl border border-refBorder bg-refCard p-6 shadow-custom" style="transition-delay: 300ms">
+                    <span class="text-refBluePrimary text-sm font-bold">03</span>
+                    <h3 class="mt-8 text-lg font-bold text-refBlueDark">Diseñamos</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-refTextMuted">Convertimos la estrategia en piezas y experiencias listas para destacar.</p>
+                </div>
+                <div class="reveal rounded-3xl border border-refBorder bg-refCard p-6 shadow-custom" style="transition-delay: 400ms">
+                    <span class="text-refBluePrimary text-sm font-bold">04</span>
+                    <h3 class="mt-8 text-lg font-bold text-refBlueDark">Revisamos</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-refTextMuted">Presentamos los avances y aplicamos ajustes según tu feedback hasta lograr el resultado perfecto.</p>
+                </div>
+                <div class="reveal rounded-3xl border border-refBorder bg-refCard p-6 shadow-custom" style="transition-delay: 500ms">
+                    <span class="text-refBluePrimary text-sm font-bold">05</span>
+                    <h3 class="mt-8 text-lg font-bold text-refBlueDark">Entregamos</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-refTextMuted">Recibes tus archivos organizados, optimizados y listos para publicar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="py-20 bg-refBlueDark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+                <div class="max-w-2xl space-y-3">
+                    <p class="text-blue-300 text-xs font-bold uppercase tracking-[0.2em]">Confianza que se nota</p>
+                    <h2 class="text-3xl font-extrabold">Diseñamos para que tu negocio avance</h2>
+                </div>
+                <div class="text-blue-200 text-sm"><i class="fas fa-star text-yellow-300"></i> Atención directa y acompañamiento</div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <blockquote class="reveal rounded-3xl border border-white/10 bg-white/10 p-7" style="transition-delay: 100ms">
+                    <p class="text-blue-50 leading-relaxed">“La identidad quedó limpia, profesional y mucho más fácil de reconocer.”</p>
+                    <footer class="mt-6 text-sm text-blue-200">Cliente de identidad visual</footer>
+                </blockquote>
+                <blockquote class="reveal rounded-3xl border border-white/10 bg-white/10 p-7" style="transition-delay: 200ms">
+                    <p class="text-blue-50 leading-relaxed">“La comunicación fue rápida y el resultado se veía bien en celular desde el primer día.”</p>
+                    <footer class="mt-6 text-sm text-blue-200">Cliente de piezas gráficas</footer>
+                </blockquote>
+                <blockquote class="reveal rounded-3xl border border-white/10 bg-white/10 p-7" style="transition-delay: 300ms">
+                    <p class="text-blue-50 leading-relaxed">“Recibí piezas consistentes y listas para publicar. Se siente como una marca nueva.”</p>
+                    <footer class="mt-6 text-sm text-blue-200">Cliente de campaña gráfica</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN POR QUÉ ELEGIRNOS -->
+    <section id="por-que-elegirnos" class="py-20 bg-white border-t border-refBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal space-y-6">
+                    <h2 class="text-3xl font-extrabold text-refBlueDark">¿POR QUÉ ELEGIR A JL DESIGN?</h2>
+                    <p class="text-refTextMuted leading-relaxed">
+                        Con años de experiencia en el sector creativo y tecnológico, ofrecemos soluciones de diseño personalizadas que impulsan resultados y destacan tu marca en el mercado.
+                    </p>
+                    <p class="text-refTextMuted leading-relaxed">
+                        Nuestro compromiso absoluto es la excelencia creativa, la estética impecable y la total satisfacción del cliente.
+                    </p>
+                    <div>
+                        <a href="#contacto" class="inline-block bg-refBluePrimary text-white font-bold px-6 py-3 rounded-xl btn-glow text-sm">Iniciar mi proyecto hoy</a>
+                    </div>
+                </div>
+                <div class="reveal bg-refBg p-8 rounded-3xl border border-refBorder shadow-custom" style="transition-delay: 150ms">
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-refBluePrimary text-white flex items-center justify-center shrink-0 font-bold">1</div>
+                            <div>
+                                <h4 class="font-bold text-refBlueDark">Soluciones para tu marca</h4>
+                                <p class="text-sm text-refTextMuted mt-1">Creamos una identidad visual clara y memorable para que tu negocio destaque.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-refBluePrimary text-white flex items-center justify-center shrink-0 font-bold">2</div>
+                            <div>
+                                <h4 class="font-bold text-refBlueDark">Diseño que comunica</h4>
+                                <p class="text-sm text-refTextMuted mt-1">Diseñamos logos, flyers, tarjetas y contenido visual alineado con tus objetivos.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-refBluePrimary text-white flex items-center justify-center shrink-0 font-bold">3</div>
+                            <div>
+                                <h4 class="font-bold text-refBlueDark">Acompañamiento cercano</h4>
+                                <p class="text-sm text-refTextMuted mt-1">Trabajamos contigo para convertir tus ideas en soluciones visuales funcionales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Y CONTACTO -->
+    <section id="contacto" class="py-20 bg-refBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div class="reveal space-y-4">
+                <p class="text-refBluePrimary text-xs font-bold uppercase tracking-[0.2em]">Preguntas frecuentes</p>
+                <h2 class="text-3xl font-extrabold text-refBlueDark">Todo claro antes de empezar</h2>
+                <details class="group rounded-2xl border border-refBorder bg-white p-5" open>
+                    <summary class="cursor-pointer list-none pr-6 font-semibold text-refBlueDark flex justify-between gap-4">¿Cuánto tarda un logo o una pieza gráfica?<span class="text-refBluePrimary group-open:rotate-45 transition">+</span></summary>
+                    <p class="mt-3 text-sm leading-relaxed text-refTextMuted">Los tiempos dependen de la cantidad de piezas y el nivel de detalle. Al revisar tu idea te damos una fecha estimada y un orden de entregas.</p>
+                </details>
+                <details class="group rounded-2xl border border-refBorder bg-white p-5">
+                    <summary class="cursor-pointer list-none pr-6 font-semibold text-refBlueDark flex justify-between gap-4">¿Puedo pedir cambios?<span class="text-refBluePrimary group-open:rotate-45 transition">+</span></summary>
+                    <p class="mt-3 text-sm leading-relaxed text-refTextMuted">Sí. Cada propuesta define sus rondas de revisión para ajustar el diseño sin perder dirección ni tiempos.</p>
+                </details>
+                <details class="group rounded-2xl border border-refBorder bg-white p-5">
+                    <summary class="cursor-pointer list-none pr-6 font-semibold text-refBlueDark flex justify-between gap-4">¿Trabajan con negocios pequeños?<span class="text-refBluePrimary group-open:rotate-45 transition">+</span></summary>
+                    <p class="mt-3 text-sm leading-relaxed text-refTextMuted">Sí. Creamos soluciones proporcionales a tu etapa y presupuesto, desde un logo hasta un paquete completo de piezas.</p>
+                </details>
+                <details class="group rounded-2xl border border-refBorder bg-white p-5">
+                    <summary class="cursor-pointer list-none pr-6 font-semibold text-refBlueDark flex justify-between gap-4">¿Qué recibo al finalizar?<span class="text-refBluePrimary group-open:rotate-45 transition">+</span></summary>
+                    <p class="mt-3 text-sm leading-relaxed text-refTextMuted">Recibes tus archivos finales organizados y preparados para el uso acordado: redes, impresión, empaques o publicaciones.</p>
+                </details>
+                <details class="group rounded-2xl border border-refBorder bg-white p-5">
+                    <summary class="cursor-pointer list-none pr-6 font-semibold text-refBlueDark flex justify-between gap-4">¿Pueden crear un paquete de piezas?<span class="text-refBluePrimary group-open:rotate-45 transition">+</span></summary>
+                    <p class="mt-3 text-sm leading-relaxed text-refTextMuted">Sí. Puedes combinar logo, tarjetas, flyers, posters, stickers y otras piezas para mantener una imagen consistente.</p>
+                </details>
+            </div>
+
+            <div class="reveal rounded-3xl bg-refBlueDark p-7 sm:p-9 text-white shadow-custom" style="transition-delay: 150ms">
+                <p class="text-blue-300 text-xs font-bold uppercase tracking-[0.2em]">Hablemos de tu proyecto</p>
+                <h2 class="mt-3 text-3xl font-extrabold">Cuéntame qué quieres construir</h2>
+                <form id="contact-form" class="mt-8 space-y-4">
+                    <label class="block text-sm font-medium text-blue-100">Tu nombre
+                        <input name="name" required type="text" placeholder="Nombre o negocio" class="mt-2 w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-blue-200/60 outline-none focus:border-blue-300 focus:ring-2 focus:ring-blue-300/30">
+                    </label>
+                    <label class="block text-sm font-medium text-blue-100">Tu número de celular
+                        <input name="phone" required type="tel" inputmode="tel" autocomplete="tel" placeholder="829-000-0000" pattern="[0-9+()\s-]{7,}" class="mt-2 w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-blue-200/60 outline-none focus:border-blue-300 focus:ring-2 focus:ring-blue-300/30">
+                    </label>
+                    <label class="block text-sm font-medium text-blue-100">Servicio que necesitas
+                        <select name="service" class="mt-2 w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none focus:border-blue-300 focus:ring-2 focus:ring-blue-300/30">
+                            <option class="text-refBlueDark">Identidad visual</option>
+                            <option class="text-refBlueDark">Diseño gráfico</option>
+                            <option class="text-refBlueDark">Diseño de logo</option>
+                            <option class="text-refBlueDark">Tarjetas, flyers y posters</option>
+                            <option class="text-refBlueDark">Stickers y etiquetas</option>
+                        </select>
+                    </label>
+                    <label class="block text-sm font-medium text-blue-100">Cuéntame brevemente
+                        <textarea name="message" rows="3" placeholder="¿Qué te gustaría crear?" class="mt-2 w-full resize-none rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-blue-200/60 outline-none focus:border-blue-300 focus:ring-2 focus:ring-blue-300/30"></textarea>
+                    </label>
+                    <button type="submit" class="w-full rounded-xl bg-white px-5 py-3.5 font-bold text-refBlueDark transition hover:bg-blue-100"><i class="fab fa-whatsapp mr-2"></i>Enviar solicitud por WhatsApp</button>
+                    <p id="contact-status" class="text-sm text-blue-200" aria-live="polite"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="work-modal" class="work-modal fixed inset-0 z-[60] flex items-center justify-center bg-refBlueDark/70 p-4 backdrop-blur-sm" hidden>
+        <div class="relative w-full max-w-lg rounded-3xl bg-white p-7 shadow-2xl">
+            <button id="work-modal-close" type="button" aria-label="Cerrar proyecto" class="absolute right-5 top-5 w-10 h-10 rounded-full bg-refBg text-refBlueDark hover:bg-blue-100 transition"><i class="fas fa-xmark"></i></button>
+            <p class="text-refBluePrimary text-xs font-bold uppercase tracking-[0.2em]">Proyecto seleccionado</p>
+            <h2 id="work-modal-title" class="mt-3 pr-10 text-2xl font-extrabold text-refBlueDark"></h2>
+            <p id="work-modal-description" class="mt-4 text-refTextMuted leading-relaxed"></p>
+            <a id="work-modal-request" href="#contacto" class="mt-7 inline-flex items-center gap-2 rounded-full bg-refBluePrimary px-5 py-3 text-sm font-bold text-white btn-glow">Solicitar algo similar <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="safe-footer bg-refBluePrimary text-white py-14 border-t border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div class="sm:col-span-2 flex items-center gap-4">
+                <img src="DESIGN1.webp" alt="JL Design" class="w-20 h-20 md:w-24 md:h-24 object-contain">
+                <div>
+                    <p class="font-semibold tracking-wide text-lg">JL Design</p>
+                    <p class="mt-2 max-w-xs text-sm leading-relaxed text-blue-100">Logos y piezas gráficas con una imagen clara, profesional y lista para destacar.</p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-sm font-bold uppercase tracking-[0.16em] text-white">Servicios</h3>
+                <ul class="mt-4 space-y-2 text-sm text-blue-100">
+                    <li>Identidad visual</li>
+                    <li>Diseño de logos</li>
+                    <li>Tarjetas y flyers</li>
+                    <li>Posters y stickers</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-sm font-bold uppercase tracking-[0.16em] text-white">Navegación</h3>
+                <ul class="mt-4 space-y-2 text-sm text-blue-100">
+                    <li><a href="#inicio" class="hover:text-white transition">Inicio</a></li>
+                    <li><a href="#trabajos" class="hover:text-white transition">Trabajos</a></li>
+                    <li><a href="#proceso" class="hover:text-white transition">Proceso</a></li>
+                    <li><a href="#contacto" class="hover:text-white transition">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="sm:col-span-2 lg:col-span-4 border-t border-white/10 pt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <p class="text-blue-100 text-sm">&copy; 2026 JL Design. Todos los derechos reservados.</p>
+                <p class="text-sm text-blue-100">Contacto directo: <span class="font-semibold text-white">829-977-7873</span></p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    const revealItems = document.querySelectorAll('.reveal');
+
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.14 });
+
+        revealItems.forEach((item) => revealObserver.observe(item));
+    } else {
+        revealItems.forEach((item) => item.classList.add('is-visible'));
+    }
+
+    const desktopNavLinks = [...document.querySelectorAll('.desktop-nav-link')];
+    const mobileNavLinks = [...document.querySelectorAll('.mobile-nav-link')];
+    const trackedSections = desktopNavLinks
+        .map((link) => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+    const setActiveNavigation = (id) => {
+        [...desktopNavLinks, ...mobileNavLinks].forEach((link) => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+    };
+    const setActiveFromHash = () => setActiveNavigation(window.location.hash.slice(1) || 'inicio');
+
+    setActiveFromHash();
+    [...desktopNavLinks, ...mobileNavLinks].forEach((link) => {
+        link.addEventListener('click', () => setActiveNavigation(link.getAttribute('href').slice(1)));
+    });
+    window.addEventListener('hashchange', setActiveFromHash);
+
+    const updateActiveFromScroll = () => {
+        const activationLine = window.innerHeight * 0.32;
+        let currentSection = trackedSections[0];
+        trackedSections.forEach((section) => {
+            if (section.getBoundingClientRect().top - 96 <= activationLine) currentSection = section;
+        });
+        if (currentSection) setActiveNavigation(currentSection.id);
+    };
+
+    window.addEventListener('scroll', updateActiveFromScroll, { passive: true });
+    window.addEventListener('resize', updateActiveFromScroll);
+    requestAnimationFrame(updateActiveFromScroll);
+
+    document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+        link.addEventListener('click', () => {
+            document.querySelector('.mobile-menu').open = false;
+        });
+    });
+
+    document.querySelector('#contact-form').addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.currentTarget);
+        const message = [
+            `Hola JL Design, soy ${formData.get('name')}.`,
+            `Mi número de celular es: ${formData.get('phone')}.`,
+            `Me interesa: ${formData.get('service')}.`,
+            formData.get('message') ? `Detalles: ${formData.get('message')}` : ''
+        ].filter(Boolean).join(' ');
+        const whatsappUrl = `https://wa.me/18299777873?text=${encodeURIComponent(message)}`;
+        window.location.href = whatsappUrl;
+    });
+
+    const workModal = document.querySelector('#work-modal');
+    const closeWorkModal = () => { workModal.hidden = true; };
+    document.querySelectorAll('.work-card').forEach((card) => {
+        const openWorkModal = () => {
+            const workTitle = card.dataset.workTitle;
+            document.querySelector('#work-modal-title').textContent = workTitle;
+            document.querySelector('#work-modal-description').textContent = card.dataset.workDescription;
+            document.querySelector('#work-modal-request').href = `https://wa.me/18299777873?text=${encodeURIComponent(`Hola JL Design, quiero solicitar algo similar al proyecto: ${workTitle}.`)}`;
+            workModal.hidden = false;
+        };
+        card.addEventListener('click', openWorkModal);
+        card.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openWorkModal();
+            }
+        });
+    });
+    document.querySelector('#work-modal-close').addEventListener('click', closeWorkModal);
+    workModal.addEventListener('click', (event) => {
+        if (event.target === workModal) closeWorkModal();
+    });
+</script>
+</body>
+</html>
